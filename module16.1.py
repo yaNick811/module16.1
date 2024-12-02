@@ -12,9 +12,9 @@ async def welcome() -> dict:
     return {"message": "Вы вошли как администратор"}
 
 @app.get("/user/{user_id}")
-async def welcome() -> dict:
-    return {"message": "Вы вошли как пользователь № <user_id>"}
+async def welcome(user_id: int) -> dict:
+    return {"message": f"Вы вошли как пользователь № {user_id}"}
 
 @app.get("/user")
-async def welcome() -> dict:
-    return {"message": "Информация о пользователе. Имя: <username>, Возраст: <age>"}
+async def welcome(username: str, age: int) -> dict:
+    return {"message": f"Информация о пользователе. Имя: {username}, Возраст: {age}"}
